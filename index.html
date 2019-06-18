@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Psychic Game(Basic)</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+	
+
+</head>
+<body>
+<header>
+	<div class="page-header">
+	  <h1>The Psychic Game </h1>
+	</div>
+</header>
+<div class="container">
+	<h2>Guess the letter, if you dare...</h2>
+	<div class="row">
+		<div class="col-md-4">
+		
+		</div>
+		<div class="col-md-4">
+			<ul id="game" class="list-group">
+				<li class="list-group-item" id="wins">Wins:</li>
+				<li class="list-group-item" id="lose">Losses:</li>
+				<li class="list-group-item" id="guessesLeft">Guesses Left:</li>
+				<li class="list-group-item" id="letter">Your Guesses so far:</li>
+			</ul>
+		</div>
+		<div class="col-md-2">
+			
+		</div>
+	</div>
+</div>
+<div class="footer">
+
+
+<script>
+
+    var computerChoices = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    
+   
+    var wins = 0;
+    var losses = 0;
+    var guessesLeft = 9;
+    var letterUser = [];
+   
+    
+    
+  
+    var computerPick = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    
+    function totalGuessesLeft() {
+        document.querySelector("#guessesLeft").innerHTML = "Guesses Left: " + guessesLeft;
+    }
+    
+    function userGuesses() {
+        document.querySelector("#letter").innerHTML = "Your Guesses so far: " + letterUser.join(' ');
+    }
+    
+    
+    
+    var restart = function() {
+        guessesLeft = 9;
+        letterUser = [];
+        var computerPick = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    }
+    
+    document.onkeyup = function(event) {
+        guessesLeft--;
+    
+        var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+    
+        letterUser.push(userGuess);
+        totalGuessesLeft();
+        userGuesses();
+    
+        if (userGuess === computerPick){
+            wins++;
+            document.querySelector("#wins").innerHTML = "Wins: " + wins;
+            restart();
+        } 
+        else if (totalGuessesLeft === 0) {
+            losses++;
+            document.querySelector("#lose").innerHTML = "Loses: " + losses;
+            restart();
+        }
+      };
+    </script>
+</body>
+</html>
