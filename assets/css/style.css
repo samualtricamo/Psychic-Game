@@ -1,31 +1,126 @@
 
 
-
+@media only screen and (max-width: 980px) {
 .background {
-    size: 768px;
+    size: 100%;
+}
+
+#pic {
+    width: 100%;
 }
 
 #title {
-    font-size: 100px;
+    font-size: 90px;
     color: lightblue;
-    text-align: center;
     font-weight: bolder;
+    position: absolute;
+    top: 10%;
+    right: 50px;
 }
 
 .row {
     text-align: center;
     font-size: 30px;
+    position: absolute;
+    top: 40%;
+    right: 30%;
 }
 
 h2 {
     text-align: center;
     color: blue;
+    position: absolute;
+    top: 40%;
+    right:33%
 }
 
 .list-group {color: blue;
+padding: 50px;
+}
 }
 
-.list-group-item {
-    padding-right: 20px;
-}
-}
+
+
+@media only screen and (max-width: 640px) {
+
+    .background {
+        size: 640px;
+    }
+    
+    #pic {
+        width: 100%;
+    }
+    #title {
+        font-size: 100%;
+        color: lightblue;
+        font-weight: bolder;
+        position: absolute;
+        top: 10%;
+        right: 50px;
+    }
+    
+    .row {
+        text-align: center;
+        font-size: 15px;
+        position: absolute;
+        top: 23%;
+        right: 28%;
+    }
+    
+    h2 {
+        text-align: center;
+        color: blue;
+        position: absolute;
+        top: 10%;
+        right:32%;
+        font-size: 15px;
+    }
+    
+    .list-group {color: blue;
+    padding: 20px;
+    }
+    
+    
+
+    @media only screen and (max-width: 768px) {
+        .background {
+            size: 768px;
+        }
+        
+        #pic {
+            width: 100%;
+        }
+
+
+        #title {
+            font-size: 330%;
+            color: lightblue;
+            font-weight: bolder;
+            position: absolute;
+            text-align: center;
+            top: 10%;
+            right: 50px;
+        }
+        
+        .row {
+            text-align: center;
+            font-size: 15px;
+            position: absolute;
+            top: 25%;
+            right: 28%;
+        }
+        
+        h2 {
+            text-align: center;
+            color: blue;
+            position: absolute;
+            top: 25%;
+            right:32%;
+            font-size: 15px;
+        }
+        
+        .list-group {color: blue;
+        padding: 50px;
+        }
+        }
+        
