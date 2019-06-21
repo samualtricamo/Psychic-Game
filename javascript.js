@@ -25,7 +25,6 @@
     
     var restart = function() {
         guessesLeft = 9;
-        losses = 0;
         letterUser = [];
     }
     
@@ -43,7 +42,7 @@
             document.querySelector("#wins").innerHTML = "Wins: " + wins;
             restart();
         } 
-        else if (totalGuessesLeft === 0) {
+        else if (guessesLeft === 0) {
             losses++;
             document.querySelector("#lose").innerHTML = "Loses: " + losses;
             restart(); 
